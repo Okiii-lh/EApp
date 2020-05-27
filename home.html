@@ -1,0 +1,91 @@
+<!-- 首页 -->
+<!doctype html>
+<html>
+	
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	</head>
+
+	<body>
+		
+		<!-- 标题 start -->
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">首页</h1>
+		</header>
+		<!-- 标题 end -->
+		
+		<!-- 内容 start -->
+		<div class="mui-content">
+			
+			<!-- 图片滑动 start -->
+			<div class="home-slider">
+				<div class="mui-slider">
+					<div class="mui-slider-group mui-slider-loop">
+						<!-- 支持循环，需要重复图片节点 0 1 2 0 1 2 -->
+						<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="imgs/home3.png" ></a></div>
+						<div class="mui-slider-item"><a href="#"><img src="imgs/slider1.png" ></a></div>
+						<div class="mui-slider-item"><a href="#"><img src="imgs/slider2.png" ></a></div>
+						<div class="mui-slider-item"><a href="#"><img src="imgs/slider5.png" ></a></div>
+						<!-- 支持循环 需要重复图片节点 -->
+						<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="imgs/home1.png" ></a></div>
+					</div>
+					
+					<div class="mui-slider-indicator">
+						<div class="mui-indicator mui-active"></div>
+						<div class="mui-indicator mui-active"></div>
+						<div class="mui-indicator mui-active"></div>
+					</div>
+				</div>
+			</div>
+			<!-- 图片滑动 end -->
+			
+			<!-- 菜单 start -->
+			<div class="home-menu">
+				<div class="home-menu-div" onclick="showUnit()">
+					<span class="mui-icon iconfont icon-danwei c-1"></span>
+					<p>单位建设</p>
+				</div>
+				<div class="home-menu-div" onclick="showOrgnize()">
+					<span class="mui-icon iconfont icon-zuzhi c-2"></span>
+					<p>组织信息</p>
+				</div>
+				<div class="home-menu-div" onclick="showAssess()">
+					<span class="mui-icon iconfont icon-kaohe c-3"></span>
+					<p>党建考核</p>
+				</div>
+			</div>
+			<!-- 菜单 end -->
+			
+		</div>
+		<!-- 内容 end -->
+		
+		
+		<!-- 脚本 start -->
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/home.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/castapp.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			ca.init(false);
+			castapp.pictureScroll({
+				callback:function(pictureNumber){
+					// console.log(pictureNumber);
+				},
+				isAutoScroll:true,
+				scrollTime:3
+			});
+		</script>
+		<!-- 脚本 end -->
+		
+	</body>
+
+
+</html>

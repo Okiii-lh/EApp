@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+
+	<body>
+		<!-- 标题 start -->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">组织管理</h1>
+		</header>
+		<!-- 标题 end -->
+		
+		<!-- 内容 start -->
+		<div class="mui-content">
+			<div class="unit">
+				<div class="unit-input">
+					<input type="text" value="" id="district"/>
+					
+					隶属于：
+					<select id="province">
+					<option value="-1">-请选择-</option>
+					<option value="0">河南省党委委员会</option>
+					<option value="1">河北省党委委员会</option>
+					</select>
+					
+					<select id="city">
+					
+					</select>
+					<button type="button" class="unit-input-btn1" onclick="addDistrict()">添加组织</button>
+				
+				
+				<input type="text" value="" id="queryDistrict" style="margin-top: 2.5rem;"/>
+				<button type="button" class="unit-input-btn1" onclick="queryDistrict()">查询</button>
+				<input type="text" value="" id="showDistrict" disabled="disabled"placeholder="" style="margin-top: 0.625rem;"/>
+				<button type="button" class="unit-input-btn1" style="width: 40%; float: left;" onclick="update()">修改</button>
+				<button type="button" class="unit-input-btn1" style="width: 40%; float: right;" onclick="deleteDistrict()">删除</button>
+				</div>
+			</div>
+			
+		</div>
+		
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/admin_manorganize.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		var provices=[
+			["-请选择-","漯河市党委支部","洛阳市党委支部","郑州市党委支部"],
+			["-请选择-","石家庄市党委支部","唐山市党委支部"]
+		];
+		
+		$(function(){
+			$("#province").change(function(){
+				var cities = provices[this.value];
+				//清空城市信息；
+				$("#city").empty(); 
+				//遍历城市数据
+				$(cities).each(function(i,n){
+				$("#city").append("<option>"+n+"</option>");
+				});
+			});
+		});
+		</script>
+	</body>
+
+</html>

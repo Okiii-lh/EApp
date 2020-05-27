@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+
+	<body>
+		
+		<!-- 标题 start -->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的收藏</h1>
+		</header>
+		<!-- 标题 end -->
+		
+		<!-- 我的收藏 start -->
+		<div class="mui-content" style="background-color: #FFFFFF;" id="collect">
+			
+			
+		</div>
+		<!-- 我的收藏 end -->
+		
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.ready(loadPage());
+			function loadPage(){
+				var username = localStorage.getItem("username");
+				$.ajax({
+					type: "POST",//方法类型
+					dataType: "json",//预期服务器返回的数据类型
+					url: baseUrl+"collect/getCollectById" ,//url
+					data: {			
+						"username": username
+					},
+					success: function (result) {
+						var collects1 = result.collects;
+						for (let col of collects1) {
+							console.log("--------")
+							console.log(col)
+							console.log("------")
+							var collectTmpl = tmpl(col);
+							$("#collect").append(collectTmpl);
+						}
+					},
+					error : function(result) {
+					   mui.toast("服务器繁忙");
+					   
+					}
+				});
+			}
+			
+			function tmpl (obj) {
+				var tmpl = '<div class="news-pre" style="margin-bottom: 0.125rem;">'
+							+'<div class="news-pre-title">'
+							+'<b>'
+							+obj.newstitle
+							+'</b>'
+							+'</div>'
+							+'</div>'
+				return tmpl;
+			}
+			
+		
+			
+		</script>
+	</body>
+
+</html>

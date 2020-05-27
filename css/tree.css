@@ -1,0 +1,27 @@
+ul>li{
+		         list-style: none;
+		     }
+		       /* 可展开*/
+		      .switch-open
+		      {
+		          margin-left:-12px;
+		          border:6px solid transparent;
+		          display:inline-block;
+		          width:0px;
+		          height:0px;
+		          border-top-color: black;
+		 
+		      }
+		       /* 展开完毕*/
+		     .switch-close
+		     {
+		         margin-left:-12px;
+		         border:6px solid transparent;
+		         display:inline-block;
+		         width:0px;
+		         height:0px;
+		         border-left-color: black;
+		         margin-bottom: 2px;
+		 
+		     }
+		      

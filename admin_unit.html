@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href=""/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/tree.css"/>
+	</head>
+
+	<body>
+		<!-- 标题 start -->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">单位信息</h1>
+		</header>
+		<!-- 标题 end -->
+		
+		<!-- 内容 stary -->
+		<div class="mui-content">
+			
+			</div>
+			<div class="unit-pre">
+				<div class="warp">
+					<ul id="container">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 内容 end -->
+		
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			
+			var info = loadPage();
+			// console.log("aa:"+info)
+			
+			var c = eval("(" + info + ")")
+
+			generate(c,document.getElementById('container'));
+		 
+			
+		    function generate(json,par)
+		    {	
+				
+		        for(var attr in json)
+		        {	
+					
+		            var ele=document.createElement('li');
+		            if(!json[attr])
+		                ele.innerHTML=''+attr;
+		            else
+		            {
+		                ele.innerHTML='<span><span class="switch-open" onclick="toggle(this)"></span>'+attr+'</span>';
+		                var nextpar=document.createElement('ul');
+		                ele.appendChild(nextpar);
+		                generate(json[attr],nextpar);
+		            }
+		            par.appendChild(ele);
+		        }
+		    }
+			
+			function loadPage(){
+					var info1;
+							
+						$.ajax({
+								type: "get",//方法类型
+								dataType: "json",//预期服务器返回的数据类型
+								url: baseUrl+"unit/getAllInfo" ,//url
+								async:false,
+								success: function (result) {
+									info1 = result.result;
+									
+								},
+								error : function(result) {
+								   mui.toast("服务器繁忙");
+								   
+								}
+							});
+
+							return info1;
+						}
+			
+		 
+		    //处理展开和收起
+			
+			function toggle(eve)
+			{
+		    var par=eve.parentNode.nextElementSibling;
+		    if(par.style.display=='none')
+		    {
+		        par.style.display='block';
+		        eve.className='switch-open';
+		 
+		    }
+		    else
+		    {
+		        par.style.display='none';
+		        eve.className='switch-close';
+		    }
+		}
+		
+		
+		 
+		
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+
+	<body>
+		
+		<!-- 标题 start -->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">新闻详情</h1>
+		</header>
+		<!-- 标题 end -->
+		
+		<!-- 新闻 start -->
+		<div class="mui-content" style="margin-top: 0px;">
+			<div class="news-image">
+				<img id="newsImg" src="" style="width: 100%; height: 100%;" >
+			</div>
+			<div class="news-title">
+				<center>
+					<b id="newsTitle">
+						
+					</b>
+				</center>
+			</div>
+			
+			<div class="news-content" id="newsContent">
+			</div>
+			
+			<div class="mark-area" id="markArea" style="margin-top: 1.25rem;">
+				<center>评论区</center>
+				
+			</div>
+			<div class="fault">
+				
+				<div class="fault-input">
+					<textarea rows="6" cols="" placeholder="发表你的评论" id="mark"></textarea>
+					<button type="button" onclick="addMask()">提交</button>
+					<button type="button" onclick="collect()" style="background-color: red; margin-top: 0.3125rem;" id="coll">收藏此文章</button>
+					<button type="button" onclick="deleteCollect()" style="background-color: red; margin-top: 0.3125rem;" id="nocoll">取消收藏</button>
+				</div>
+			</div>
+			
+		</div>
+		<!-- 新闻 end -->
+		
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 脚本 start -->
+		<script type="text/javascript">
+			mui.ready(loadPage());
+			function loadPage(){
+				var newsid = localStorage.getItem("newsid");
+				var username = localStorage.getItem("username");
+				$.ajax({
+					type: "POST",//方法类型
+					dataType: "json",//预期服务器返回的数据类型
+					url: baseUrl+"news/getNewInfoById" ,//url
+					data: {			
+						"id":newsid,
+						"username": username
+						},
+					success: function (result) {
+						var news = result.news;
+						document.getElementById("newsContent").innerText = news.newscontent;
+						document.getElementById("newsTitle").innerText = news.newstitle;
+						document.getElementById("newsImg").src = news.photopath;
+						var marks = result.mark;
+						for (let mark of marks){
+							var markTmpl = tmpl(mark.markcontent);
+							$("#markArea").append(markTmpl);
+						}
+						var collect = result.collect;
+						console.log(collect)
+						if(collect == 'no'){
+							$("#coll").show();
+							$("#nocoll").hide();
+						}else{
+							$("#coll").hide();
+							$("#nocoll").show();
+						}
+					},
+					error : function(result) {
+					   mui.toast("服务器繁忙");
+					}
+				});
+			}
+			
+			function collect(){
+				var newsTitle = document.getElementById("newsTitle").innerText;
+				var newsid = localStorage.getItem("newsid");
+				var username = localStorage.getItem("username");
+				
+				$.ajax({
+					type: "POST",//方法类型
+					dataType: "json",//预期服务器返回的数据类型
+					url: baseUrl+"collect/saveCollect" ,//url
+					data: {			
+						"newTitle":newsTitle,
+						"username": username,
+						"newId": newsid
+						},
+					success: function (result) {
+							$("#coll").hide();
+							$("#nocoll").show();
+					},
+					error : function(result) {
+					   mui.toast("服务器繁忙");
+					}
+				});
+			}
+			
+			function deleteCollect(){
+				var newsid = localStorage.getItem("newsid");
+				var username = localStorage.getItem("username");
+				
+				$.ajax({
+					type: "POST",//方法类型
+					dataType: "json",//预期服务器返回的数据类型
+					url: baseUrl+"collect/deleteCollect" ,//url
+					data: {			
+						"username": username,
+						"newsid": newsid
+						},
+					success: function (result) {
+							$("#coll").show();
+							$("#nocoll").hide();
+					},
+					error : function(result) {
+					   mui.toast("服务器繁忙");
+					}
+				});
+			}
+			
+			function tmpl (obj) {
+				var tmpl = '<div class="mark-pre">'
+						+obj+
+						'</div>'
+							
+				return tmpl;
+			}
+			
+			function addMask(){
+				var mark = $("#mark").val();
+				var username = localStorage.getItem("username")
+				var newid = localStorage.getItem("newsid")
+				if(isNull(mark)){
+					mui.toast("输入不能为空");
+				}else{
+					$.ajax({
+						type: "POST",//方法类型
+						dataType: "json",//预期服务器返回的数据类型
+						url: baseUrl+"mark/saveMark" ,//url
+						data: {
+							"username" : username,
+							"newId" : newid,
+							"mark":mark,
+						},
+						success: function (result) {
+							if (result.result == "success") {
+								mui.toast("评论成功");
+								$("#markArea").append(
+								'<div class="mark-pre">'
+								+mark+
+								'</div>'
+								)
+							}else{
+								mui.toast("服务器错误错误");
+							}
+						},
+						error : function(result) {
+						   mui.toast("服务器繁忙");
+						}
+					});
+				}
+			}
+		</script>
+		<!-- 脚本 end -->
+	</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!-- 我的 界面 -->
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+
+	</head>
+
+	<body>
+	
+		<!-- 标题 start -->
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">我的信息</h1>
+		</header>
+		<!-- 标题 end -->
+		
+		<!-- 内容 start -->
+		<div class="mui-content">
+			<!-- 账户信息 start -->
+			<div class="mine-head">
+				<div class="mine-head-l">
+					<img src="imgs/touxiang.jpg" >
+				</div>
+				<div class="mine-head-r">
+					<p>用户名</p>
+					<p>gaoke</p>
+				</div>
+			</div>
+			<!-- 账户信息 end -->
+			
+			<!-- 个人信息选项 start -->
+			<div class="mine-userInfo-item public-margin-top">
+				<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" onclick="turn('updatepassword.html')">
+								<span class="mui-icon iconfont icon-gerenxinxi"></span>
+								修改密码
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" onclick="turn('collect.html')">
+								<span class="mui-icon iconfont icon-hudongshequ"></span>
+								我的收藏
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" onclick="turn('score.html')">
+								<span class="mui-icon iconfont icon-tongzhi"></span>
+								我的分数
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" onclick="turn('mark.html')">
+								<span class="mui-icon iconfont icon-tongzhi"></span>
+								我的评论
+							</a>
+						</li>
+					</ul>
+			</div>
+			<!-- 个人信息选项 end -->
+			
+			<!-- 退出选项 start -->
+			<div class="mine-feedback-item public-margin-top">
+				<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" onclick="turn('login.html')">
+								<span class="mui-icon iconfont icon-yijianfankui"></span>
+								退出
+							</a>
+						</li>
+				</ul>
+			</div>
+			<!-- 退出选项 end -->
+			
+		</div>
+		<!-- 内容 end -->
+		
+		
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script src="js/castapp.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			ca.init();
+		</script>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function turn(url){
+				mui.openWindow({
+				    id: url,
+				    url: url,
+				});
+			}
+		</script>
+	</body>
+
+</html>

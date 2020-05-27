@@ -1,0 +1,92 @@
+<!-- 新闻列表 -->
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function turn(url){
+				mui.openWindow({
+				    id: url,
+				    url: url,
+				});
+			}
+		</script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.ready(loadPage());
+			function loadPage(){
+				
+				$.ajax({
+					type: "POST",//方法类型
+					dataType: "json",//预期服务器返回的数据类型
+					url: baseUrl+"news/getAllNews" ,//url
+					data: {			
+						
+					},
+					success: function (result) {
+						var goods = result.news;
+						$("#mygood").empty();
+						for (let good of goods) {
+							var goodTmpl = tmpl(good);
+							$("#news").append(goodTmpl);
+						}
+					},
+					error : function(result) {
+					   mui.toast("服务器繁忙");
+					   
+					}
+				});
+			}
+			
+			function tmpl (obj) {
+				var tmpl = 
+							'<div class="news-pre" onclick="turn('+obj.newsid+')">'
+							+'<div class="news-pre-title">'
+							+'		<b>'
+							+obj.newstitle
+							+'	</b>'
+							+'	</div>'
+							+'	<div class="news-pre-photo">'
+							+'		<img src="'+obj.photopath+'" style="width: 100%; height: 100%;" >'
+							+'</div>'
+							+'</div>'
+							
+				return tmpl;
+			}
+			
+			function turn(newsid){
+				localStorage.setItem("newsid",newsid);
+				mui.openWindow({
+				    id: 'newsinfo.html',
+				    url: 'newsinfo.html',
+				});
+			}
+			
+		</script>
+	</head>
+
+	<body>
+		<!-- 标题 start -->
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">新闻热点</h1>
+		</header>
+		<!-- 标题 end -->
+		
+		<!-- 新闻 start -->
+		<div class="mui-content" style="margin-top: 0px;" id="news">
+			
+		</div>
+		<!-- 新闻 end -->
+	</body>
+
+</html>

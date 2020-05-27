@@ -1,0 +1,604 @@
+.mui-bar-nav{
+	background-color: red;
+}
+.mui-bar-nav a,.mui-bar-nav h1,.mui-bar-nav button{
+	color: #FFFFFF !important;
+}
+.mui-bar-nav h1 span{
+	font-size: 20px !important;
+	margin: 0px 3px !important;
+}
+
+
+/*通用属性*
+/*通用上边距*/
+.public-matgin-top{
+	margin-top: 20px;
+}
+
+/* 通用绿色按钮 */
+.pulic-g-btn{
+	background: blueviolet;
+	color: #FFFFFF;
+	border: 0px;
+	display: block;
+	margin: 10px auto;
+}
+.btn-block{
+	height: 45px;
+	width: 90%;
+	font-size: 18px;
+}
+.link-btn{
+	font-size: 13px;
+	position: relative;
+	top: -10px;
+	right: 10px;
+}
+
+/* 登陆界面 */
+.login-input{
+	width: 80% !important;
+}
+.login-logo{
+	margin-top: 80px;
+	text-align: center;
+}
+.login-logo img{
+	width: 100px;
+	height: 100px;
+}
+
+/* 组织建设考核 */
+.assess-content{
+	width: 100%;
+	background-color: blue;
+}
+.assess-content-question{
+	width: 100%;
+	padding: 0.5rem;
+	background-color: #EEEEEE;
+	margin-top: 0rem;
+}
+.assess-content-answer{
+	width: 100%;
+	background-color: #FFFFFF;
+	margin-bottom: 0rem;
+}
+.assess-content-answer-pre{
+	width: 100%;
+}
+.assess-submit{
+	width: 70%;
+	height: ;
+}
+
+/* 新闻列表 */
+.news-pre{
+	width: 100%;
+	height: 110px;
+	color: #000000;
+	background-color: #FFFFFF;
+	margin-bottom: 0.125rem;
+}
+.news-pre-title{
+	padding: 0.3125rem;
+	width: 60%;
+	height: 90%;
+	float: left;
+}
+.news-pre-photo{
+	padding: 0.3125rem;
+	position: relative;
+	width: 40%;
+	float: left;
+	height: 90%;
+}
+/* 输入框 */
+.register-input{
+	position: relative;
+}
+
+.takeaway-content{
+	 margin-top: 94px; 
+}
+
+
+/* 删掉缝隙 */
+.home-bar{
+	-webkit-box-shadow: 0px 0px 0px;
+}
+
+/* 中间菜单 */
+.home-menu{
+	overflow: hidden;
+	padding-top: 5px;
+}
+.home-menu div{
+	width: 33%;
+	text-align: center;
+	padding: 20px 0px;
+	float: left;
+}
+.home-menu div p{
+	position: relative;
+	top: 10px;
+}
+.home-menu div span{
+	display: block;
+	width: 60px;
+	height: 60px;
+	margin: 0px auto;
+	color: #FFFFFF;
+	font-size: 45px;
+	line-height: 60px;
+	border-radius: 5rem;
+	
+}
+.c-1{
+	background: #FD3B3D;
+}
+.c-2{
+	background: #24C1EC;
+}
+.c-3{
+	background: #FD6A3C;
+}
+.c-4{
+	background: #54A8FD;
+}
+.c-5{
+	background: #3D92E1;
+}
+.c-6{
+	background: #07C167;
+}
+.c-7{
+	background: #F9891B;
+}
+.c-8{
+	background: #F75F97;
+}
+.home-tj{
+	background: #FFFFFF;
+	padding: 10px;
+	overflow: hidden;
+}
+.home-tj div{
+	float: left;
+}
+.home-tj-l{
+	width: 30%;
+	border-right: 1px solid #f0f0f0;
+}
+.home-tj-l img{
+	width: 100%;
+	margin-top: 40px;
+}
+.home-tj-l h4{
+	color: #FF5407;
+}
+.home-tj-l p{
+	color: #999;
+	font-size: 13px;
+}
+.home-tj-r{
+	width: 70%;
+}
+.home-tj-r div{
+	width: 100%;
+}
+.home-tj-r-t{
+}
+.home-tj-r-t-l{
+	float: left;
+	width: 50% !important;
+}
+.home-tj-r-t img{
+	float: right;
+	width: 50%;
+	height: 60px;
+}
+.home-tj-r-b{
+	overflow: hidden;
+}
+.home-tj-r-b div{
+	width: 50%;
+	float: left;
+}
+.home-tj-r-b-l{
+}
+.home-tj-r-b-r{
+}
+.home-tj-r-b-l img,.wm-tj-r-b-r img{
+	width: 60%;
+	display: block;
+	margin: 0 auto;	
+	height: 50px;
+}
+
+/* 列表 */
+
+.home-list{
+	background: #FFFFFF;
+	margin-top: 10px;
+}
+.home-list-div{
+	padding: 10px;
+	overflow: hidden;
+	border-bottom: 1px solid #DDDDDD;
+}
+.home-list-div-l{
+	float: left;
+	width: 30%;
+}
+.home-list-div-l img{
+	width:100%;
+	height: 70px;
+}
+.home-list-div-r{
+	width: 70%;
+	float: left;
+}
+.home-list-div-r-o{
+	overflow: hidden;
+}
+.home-list-div-r-o-l{
+	float: left;
+}
+.home-list-div-r-o-r{
+	float: right;
+}
+.home-list-div-r-t{
+	overflow: hidden;
+}
+.home-list-div-r-t-l{
+	float: left;
+}
+.home-list-div-r-t-r{
+	float: right;
+}
+.home-list-div-r-t-r span{
+	font-size: 10px;
+}
+.home-list-div-r-t-l span{
+	font-size: 10px;
+}
+.star-ys{
+	color: #DDDDDD;
+}
+.star-active{
+	color: #ffaa0c;
+}
+.wm-list-div-r-tt{
+}
+
+/* 我的 */
+.mine-head{
+	overflow: hidden;
+	background: #FFFFFF;
+	padding: 5px 5px;
+}
+.mine-head-l{
+	width: 70px;
+	height: 70px;
+	float: left;
+	border-radius: 100px;
+}
+.mine-head-l img{
+	width: 70px;
+	height: 70px;
+	/* border-radius: 100px; */
+}
+.mine-head-r{
+	padding: 10px;
+	float: left;
+}
+
+/* 设置 */
+.tc-btn{
+	color: #f33c3c;
+	border: 0px;
+	width: 80%;
+	display: block;
+	margin: 20px auto;
+}
+.small-txt{
+	font-size: 13px;
+	color: #CCCCCC;
+}
+
+
+/* 账户信息 */
+.user-img{
+	right: 38px;
+	top: 3px;
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	border-radius: 100px;
+}
+.img-list{
+	padding: 15px 15px;
+}
+.right-txt{
+	margin-right: 18px;
+	color: #999999;
+}
+
+
+/* 修改用户名 */
+.name-div{
+	margin: 30px 20px;
+}
+
+
+/* 更新密码 */
+.updatepassword{
+	
+}
+.updatepassword-title{
+	width: 80%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	height: 40px;
+	padding-top: 8px;
+	border-bottom: 1px solid #24C1EC;
+}
+.updatepassword-input{
+	width: 80%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+}
+.updatepassword-input-p{
+	font-size: 15px;
+}
+.updatepassword-input input{
+	border: 1px solid #24C1EC;
+}
+.updatepassword-input button{
+	width: 100%;
+	height: 50px;
+	border: 0px;
+	background: #24C1EC;
+	color: #FFFFFF;
+	font-size: 20px;
+}
+
+/* 单位组织 */
+.unit{
+	
+}
+.unit-input{
+	width: 80%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+}
+.unit-input input{
+	border: 1px solid #24C1EC;
+	float: left;
+}
+.unit-input-btn1{
+	width: 100%;
+	height: 40px;
+	border: 0px;
+	background: #24C1EC;
+	color: #FFFFFF;
+	font-size: 20px;
+}
+.unit-input-btn2{
+	margin-top: 0.625rem;
+	width: 32%;
+	height: 40px;
+	border: 0px;
+	background: #24C1EC;
+	color: #FFFFFF;
+	font-size: 20px;
+}
+.unit-pre{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* 我的分数 */
+.score{
+	background-color: #FFFFFF;
+}
+.score-title{
+	width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 40px;
+	padding-top: 8px;
+	border-bottom: 1px solid #EEEEEE;
+	margin-bottom: 0.3125rem;
+}
+.score-total{
+	width: 100%;
+	text-align: center;
+	color: blue;
+	font-size: 1.25rem;
+}
+.score-total-text{
+	width: 100%;
+	text-align: center;
+	color: #8F8F94;
+}
+.score-info{
+	width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 55px;
+	padding-top: 8px;
+	border-bottom: 1px solid #EEEEEE;
+	background-color: #FFFFFF;
+}
+.score-pre{
+	padding: 0.625rem;
+	padding-left: 1.875rem;
+	height: 3.125rem;
+	margin-bottom:0.125rem;
+	background-color: #FFFFFF;
+}
+.score-pre-score{
+	width: 2.5rem;
+	font-size: 1.875rem;
+	color: blue;
+	float: left;
+}
+.score-pre-score-text{
+	float: left;
+}
+.score-pre-score-data{
+	color: #8F8F94;
+	float: right;
+	padding-right: 1.875rem;
+}
+
+/* 我的评论 */
+.mark-pre{
+	width: 100%;
+	height: 3.75rem;
+	padding: 0.625rem;
+	border-bottom: 2px solid #999999;
+}
+.mark-pre-photo{
+	width: 2.5rem;
+	height: 2.5rem;
+	float: left;
+}
+.mark-pre-text{
+	margin-left: 0.625rem;
+	float: left;
+}
+
+/* 新闻详情 */
+.news-title{
+	padding: 1.25rem;
+}
+.news-image{
+	width: 100%;
+	height: 12.5rem;
+}
+/* 收费标准 */
+.standard{
+	padding: 10px;
+}
+.medical-list{
+	width: 100%;
+	padding-top: 15px;
+	display: block;
+}
+.medical-list-p{
+	width: 80%;
+	height: 180px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	background: #FFFFFF;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+.medical-list-p-name{
+	display: block;
+	border-bottom: 1px solid #EEEEEE;
+}
+.medical-list-p-detail{
+	font-size: 15px;
+	padding-top: 10px;
+}
+.medical-list-p-detail span{
+	margin-bottom: 8px;
+}
+.volunteer-list-p{
+	width: 80%;
+	height: 150px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	background: #FFFFFF;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+
+/* 评论 */
+.fault{
+	
+}
+.fault-title{
+	width: 80%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	height: 40px;
+	padding-top: 8px;
+	border-bottom: 1px solid #24C1EC;
+}
+.fault-input{
+	width: 80%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+}
+.fault-input-p{
+	font-size: 15px;
+}
+.fault-input textarea{
+	border: 1px solid #24C1EC;
+}
+.fault-input input{
+	border: 1px solid #24C1EC;
+}
+.fault-input button{
+	width: 100%;
+	height: 50px;
+	border: 0px;
+	background: #24C1EC;
+	color: #FFFFFF;
+	font-size: 20px;
+}
+
+.unit-manage{
+	width: 12.5rem;
+	height: 12.5rem;
+	background-color: #0000FF;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 6.25rem;
+}
+.unit-pre{
+	width: 380px;
+	height: 100px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: auto;
+	margin-top: 1.25rem;
+}
+
+/* 管理员 */
+.admin-btn{
+	width: 50%;
+	height: 3.75rem;
+	background-color: blueviolet;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 60px;
+	border-radius: 1.875rem;
+	padding: 1.25rem;
+	padding-left: 3.125rem;
+	color: #FFFFFF;
+}
